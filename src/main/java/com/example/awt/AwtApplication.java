@@ -29,6 +29,7 @@ public class AwtApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         User user = repository.findByRole(Role.ADMIN);
         if(user==null){
+            user = new User();
             user.setEmail("admin@gmail.com");
             user.setFirstName("admin");
             user.setLastName("admin");
